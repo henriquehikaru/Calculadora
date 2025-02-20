@@ -1,0 +1,95 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Calculadora
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        void AtribuirOperacao(string oper)
+        {
+            lblOper.Text = oper;
+            btIgual.Enabled = true;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AtribuirOperacao(btSoma.Text); 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            AtribuirOperacao(btSub.Text);
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            AtribuirOperacao(btMult.Text);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btIgual_Click(object sender, EventArgs e)
+        {
+            double num1, num2, resultado = 0;
+            num1 = (double)numOper1.Value;
+            num2 = (double)numOper2.Value;
+
+            if (lblOper.Text == btSoma.Text)
+                resultado = num1 + num2;
+            else if (lblOper.Text == btSub.Text)
+                resultado = num1 - num2;
+            else if (lblOper.Text == btMult.Text)
+                resultado = num1 * num2;
+            else
+                resultado = num1 / num2;
+
+            lblResultado.Text = resultado.ToString();
+        }
+
+
+        private void lblOper_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void numOper1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btDiv_Click_1(object sender, EventArgs e)
+        {
+            AtribuirOperacao(btDiv.Text);
+        }
+
+        private void lblResultado_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
+}
