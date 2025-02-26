@@ -17,12 +17,6 @@ namespace Calculadora
             InitializeComponent();
         }
 
-        void TravarBotao()
-        {
-            btIgual.Enabled = !((lblOper.Text == btDiv.Text && numOper2.Value == 0 || lblOper.Text == "...");
-           
-        }
-
         void AtribuirOperacao(string oper)
         {
             lblOper.Text = oper;
@@ -39,15 +33,24 @@ namespace Calculadora
             AtribuirOperacao(btSub.Text);
         }
 
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void button3_Click(object sender, EventArgs e)
         {
             AtribuirOperacao(btMult.Text);
         }
 
-        private void btDiv_Click_1(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
-            AtribuirOperacao(btDiv.Text);
-            TravarBotao();
+
         }
 
         private void btIgual_Click(object sender, EventArgs e)
@@ -65,8 +68,6 @@ namespace Calculadora
             else
                 resultado = num1 / num2;
 
-            
-
             lblResultado.Text = resultado.ToString();
         }
 
@@ -81,14 +82,14 @@ namespace Calculadora
 
         }
 
+        private void btDiv_Click_1(object sender, EventArgs e)
+        {
+            AtribuirOperacao(btDiv.Text);
+        }
+
         private void lblResultado_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void numOper2_ValueChanged(object sender, EventArgs e)
-        {
-            TravarBotao();
         }
     }
 }
