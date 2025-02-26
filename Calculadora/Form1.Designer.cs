@@ -52,7 +52,6 @@
             this.label1.Size = new System.Drawing.Size(141, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "Operando 1";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -63,7 +62,6 @@
             this.label2.Size = new System.Drawing.Size(141, 29);
             this.label2.TabIndex = 1;
             this.label2.Text = "Operando 2";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // lblOper
             // 
@@ -122,6 +120,7 @@
             this.numOper2.Name = "numOper2";
             this.numOper2.Size = new System.Drawing.Size(136, 35);
             this.numOper2.TabIndex = 6;
+            this.numOper2.ValueChanged += new System.EventHandler(this.numOper2_ValueChanged);
             // 
             // btSoma
             // 
@@ -197,7 +196,6 @@
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Calculadora";
-            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numOper1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numOper2)).EndInit();
             this.ResumeLayout(false);
