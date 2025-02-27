@@ -8,19 +8,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Calculadora
 {
     public partial class Form1 : Form
     {
+        
         public Form1()
         {
             InitializeComponent();
+            btSg.Enabled = false;
+
         }
 
         void TravarBotao()
         {
-            btIgual.Enabled = !((lblOper.Text == btDiv.Text && numOper2.Value == 0 || lblOper.Text == "...");
-           
+            btIgual.Enabled = !(lblOper.Text == btDiv.Text && numOper2.Value == 0 || lblOper.Text == "...");
         }
 
         void AtribuirOperacao(string oper)
@@ -65,27 +68,24 @@ namespace Calculadora
             else
                 resultado = num1 / num2;
 
-            
 
             lblResultado.Text = resultado.ToString();
+            btSg.Enabled = true;
         }
-
-
-        private void lblOper_Click(object sender, EventArgs e)
+        private void btLp_Click(object sender, EventArgs e)
         {
-
+            numOper1.Value = 0;
+            numOper2.Value = 0;
+            lblOper.Text = "...";
+            lblResultado.Text = " ";
         }
 
-        private void numOper1_ValueChanged(object sender, EventArgs e)
+        private void btSg_Click(object sender, EventArgs e)
         {
-
+            btSg.Enabled = false;
+            numOper1.Value = Convert.ToDecimal(lblResultado.Text);
+            lblResultado.Text = " ";
         }
-
-        private void lblResultado_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void numOper2_ValueChanged(object sender, EventArgs e)
         {
             TravarBotao();
