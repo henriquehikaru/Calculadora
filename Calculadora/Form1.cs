@@ -86,6 +86,7 @@ namespace Calculadora
             numOper1.Value = Convert.ToDecimal(lblResultado.Text);
             lblResultado.Text = " ";
         }
+
         private void numOper2_ValueChanged(object sender, EventArgs e)
         {
             TravarBotao();
